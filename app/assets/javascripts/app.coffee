@@ -1,0 +1,2 @@
+cinema = angular.module('cinema',[
+])
