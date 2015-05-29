@@ -1,7 +1,7 @@
 cinema = angular.module('cinema',[
     'templates',
     'ngRoute',
-  'ngResource',
+    'ngResource',
     'controllers'
 ])
 

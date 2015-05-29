@@ -9,7 +9,4 @@ controllers.controller("MoviesController", [ '$scope','$routeParams', '$location
     else
         $scope.movies = []
     
-
-
-
 ])
