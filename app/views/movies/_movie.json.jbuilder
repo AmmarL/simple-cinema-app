@@ -1,0 +1,1 @@
+json.(movie, :id, :name, :description, :duration)

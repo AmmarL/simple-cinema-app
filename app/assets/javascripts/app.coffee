@@ -1,7 +1,8 @@
 cinema = angular.module('cinema',[
-	'templates',
-	'ngRoute',
-	'controllers'
+    'templates',
+    'ngRoute',
+  'ngResource',
+    'controllers'
 ])
 
 cinema.config([ '$routeProvider',
@@ -33,18 +34,3 @@ movies = [
 ]
 
 controllers = angular.module('controllers',[])
-controllers.controller("MoviesController", [ '$scope','$routeParams', '$location',
-  ($scope , $routeParams, $location)->
-  	$scope.search = (keywords)-> $location.path("/").search('keywords',keywords)
-
-
-  	if $routeParams.keywords
-  		keywords = $routeParams.keywords.toLowerCase();
-  		$scope.movies = movies.filter (movie)-> movie.name.toLowerCase().indexOf(keywords) != -1
-  	else
-  		$scope.movies = []
-  	
-
-
-
-])
