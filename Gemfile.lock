@@ -36,6 +36,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    airbrake (4.2.0)
+      builder
+      multi_json
     angular-rails-templates (0.2.0)
       railties (>= 3.1)
       sprockets (~> 2)
@@ -208,6 +211,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  airbrake
   angular-rails-templates (~> 0.2.0)
   bower-rails
   byebug
