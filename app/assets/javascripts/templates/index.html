@@ -9,6 +9,7 @@
     </div>
     <div class="form-group col-md-6 col-md-offset-3 text-center">
       <button ng-click="search(keywords)" class="btn btn-primary btn-lg">Search</button>
+      <button ng-click="newMovie()" class="btn btn-info btn-lg">New Movie..</button>
     </div>
   </form>
 </section>
@@ -18,10 +19,10 @@
   <ul class="list-unstyled">
     <li ng-repeat="movie in movies">
       <section class="well col-md-6 col-md-offset-3">
-        <h1 class="h3 col-md-6 text-right" style="margin-top: 0"><a href="#">{{movie.name}}</a></h1>
+        <h1 class="h3 col-md-6 text-right" style="margin-top: 0"><a  ui-sref="movies.show({ id: movie.id })">{{movie.name}}</a></h1>
         <div class="col-md-6">
-          <button class="btn btn-info">Edit</button>
-          <button class="btn btn-danger">Delete</button>
+          <button class="btn btn-info" ui-sref="movies.edit({id : movie.id})">Edit</button>
+          <button class="btn btn-danger" ng-click="delete(movie)">Delete</button>
         </div>
       </section>
     </li>

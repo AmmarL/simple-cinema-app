@@ -1,0 +1,46 @@
+<aside class="flash row">
+  <article flash-alert duration="0" active-class="alert" class="col-md-6 col-md-offset-3">
+    {{flash.message}}
+  </article>
+</aside>
+<form class="form-horizontal" role="form" class="edit-user">
+  <div class="form-group" ng-class="{'has-warning has-feedback':errors.name}">
+    <label 
+      for="name" 
+      class="col-md-2 control-label col-md-offset-2">
+      Name
+    </label>
+    <div class="col-md-5">
+      <input type="text" name="name" class="form-control" placeholder="e.g. The Hobbit" ng-model="movie.name">
+    </div>
+  </div>
+  <div class="form-group" ng-class="{'has-warning has-feedback':errors.name}">
+    <label 
+      for="description" 
+      class="col-md-2 control-label col-md-offset-2">
+      Instructions
+    </label>
+    <div class="col-md-5">
+      <textarea name="description" class="form-control" ng-model='movie.description' placeholder="e.g. Fantasy">
+      </textarea>
+    </div>
+  </div>
+    <div class="form-group" ng-class="{'has-warning has-feedback':errors.movie}">
+    <label 
+      for="movie" 
+      class="col-md-2 control-label col-md-offset-2">
+      Duration
+    </label>
+    <div class="col-md-5">
+      <input type="text" name="name" class="form-control" placeholder="Duration in minutes" ng-model="movie.duration">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-offset-2 col-md-3">
+      <button class="btn btn-default" ng-click="cancel()"> Cancel</button>
+    </div>
+    <div class="col-md-4 text-right">
+      <button class="btn btn-primary" ng-click="save()"> Save </button>
+    </div>
+  </div>
+</section>
