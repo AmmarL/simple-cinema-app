@@ -1,0 +1,1 @@
+json.(theater, :id, :name, :description, :address ,:rooms)
