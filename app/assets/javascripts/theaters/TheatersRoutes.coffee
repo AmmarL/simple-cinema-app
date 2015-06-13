@@ -13,4 +13,9 @@ cinema.config([ '$stateProvider', '$urlRouterProvider'
             controller: 'TheatersController'
             templateUrl: 'theaters/list.html'
 
+        $stateProvider.state 'theaters.show',
+            url: '/:id'
+            controller: 'TheaterController'
+            templateUrl: 'theaters/show.html'
+
  ])

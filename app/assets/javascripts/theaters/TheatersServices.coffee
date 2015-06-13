@@ -5,7 +5,7 @@ services.factory('TheatersService', ['TheatersResource',  '$q',
         
         getTheater: (id)->
                 defered = $q.defer()                 
-                TheatersResource.get({movieId: id}).$promise.then (response)->  defered.resolve response 
+                TheatersResource.get({theaterId: id}).$promise.then (response)->  defered.resolve response 
                 defered.promise
 
         getTheaters: (keywords)->
@@ -17,7 +17,7 @@ services.factory('TheatersService', ['TheatersResource',  '$q',
 
 services.factory('TheatersResource' , [ '$resource' , 
     ($resource) ->
-     resoruce = $resource('/theaters/:thaterId', { thaterId: "@thaterId", format: 'json' } , {
+     resoruce = $resource('/theaters/:theaterId', { theaterId: "@theaterId", format: 'json' } , {
             'update': { method:'PUT' }
             'get': {method: 'GET' , isArray: false}
         })

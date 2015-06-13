@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :movies , only: [:index , :show , :create , :update , :destroy]
-  resources :theaters , only: [:index]
+  resources :theaters , only: [:index , :show]
   resources :rooms , only: [:index]
   
   # The priority is based upon order of creation: first created -> highest priority.
