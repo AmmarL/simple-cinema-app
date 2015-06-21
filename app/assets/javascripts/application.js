@@ -17,6 +17,9 @@
 //= require angular-resource/angular-resource
 //= require angular-flash/dist/angular-flash
 //= require angular-rails-templates
+//= require angular-cookies/angular-cookies
+//= require angular-cookie/angular-cookie
 //= require angular-ui-router
+//= require ng-token-auth
 //= require_tree .
 

@@ -21,4 +21,4 @@ services.factory('TheatersResource' , [ '$resource' ,
             'update': { method:'PUT' }
             'get': {method: 'GET' , isArray: false}
         })
-])
+]) 

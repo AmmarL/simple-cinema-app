@@ -1,12 +1,15 @@
 angular.module('cinema',[
-    'templates',
-    'ngRoute',
+    'templates',   
+    'ngRoute' 
     'ngResource',
     'controllers',
     'services',
+    'ngCookies',
     'angular-flash.service',
     'angular-flash.flash-alert-directive',
-    'ui.router'
+    'ui.router',
+    'ng-token-auth',
+    'ipCookie'
 ])
 
 

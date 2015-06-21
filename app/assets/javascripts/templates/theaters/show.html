@@ -9,6 +9,16 @@
     <p class="panel-body">
       {{theater.description}}
     </p>
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="room in theater.rooms">
+        <span class="badge">14</span>
+        {{room.name}}
+        <br>
+        {{room.description}}
+        <br>
+         kapacitet : {{room.capacity}} sjedista
+      </li>
+    </ul>
   </article>
 <section>
     <div class="col-md-3">
