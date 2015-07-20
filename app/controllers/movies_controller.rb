@@ -1,11 +1,11 @@
 class MoviesController < ApplicationController
-    skip_before_filter :verify_authenticity_token
+  skip_before_filter :verify_authenticity_token
 
   def index
   	@movies = if params[:keywords]
   				 Movie.where('name ilike ?',"%#{params[:keywords]}%")
                else
-                 []
+                 Movie.all()
                end
   end
 
@@ -13,7 +13,7 @@ class MoviesController < ApplicationController
   	@movie = Movie.find(params[:id])
   end
 
-  def create    
+  def create
     @movie = Movie.new(params.require(:movie).permit(:name,:description ,:duration))
     @movie.save
     render 'show', status: 201

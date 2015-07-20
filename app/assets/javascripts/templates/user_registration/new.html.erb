@@ -13,11 +13,11 @@
         <label for="password_confirmation" class="sr-only">Password Confirmation</label>
         <input type="password" name="password_confirmation" id="password_confirmation" ng-model="registrationForm.password_confirmation" required="required" class="form-control" placeholder="Password confirmation">
 
-        <div class="form-group">
+        <!--<div class="form-group">
             <label for="name">I am a:</label>
             <select class="form-control" ng-options="type.id as type.type for type in userTypes" ng-model="user_type" required>
             </select>
-        </div>
+        </div>-->
       </div>
     </div>
 
@@ -30,4 +30,3 @@
   </form>
   <p class="text-center">Have an account? <a ui-sref="users.sign-in">Sign in</a></p>
 </div>
-

@@ -19,11 +19,13 @@ gem 'jquery-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
-gem 'sass', '3.2.19' 
+gem 'sass', '3.2.19'
 gem 'bower-rails'
 gem 'angular-rails-templates', '~> 0.2.0'
 # Error logging
 gem 'airbrake'
+
+
 
 gem "foreman"
 group :production, :staging do
@@ -42,6 +44,9 @@ group :test, :development do
   gem 'teaspoon'
   gem 'teaspoon-jasmine'
   gem 'phantomjs'
+  gem 'ruby-graphviz'
+  gem 'rails-erd'
+  gem 'railroady'
 end
 
 # bundle exec rake doc:rails generates the API under doc/api.

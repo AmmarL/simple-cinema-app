@@ -11,4 +11,4 @@ UserType.destroy_all
    	{ name: 'Sala 2' , description:'Velika Sala Kina Tuzla' , capacity: 270 , row: 18 , theater: theater }])
 
    userTypes = UserType.create([{ name: 'Admin' , description:'Administrator' }, { name: 'Standard' , description:'Standardni korisnik' }])
-   #Mayor.create(name: 'Emanuel', city: cities.first)
+   

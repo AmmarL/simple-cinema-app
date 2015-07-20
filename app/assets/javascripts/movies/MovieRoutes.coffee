@@ -3,10 +3,10 @@ cinema = angular.module('cinema');
 cinema.config([ '$stateProvider', '$urlRouterProvider'
     ($stateProvider , $urlRouterProvider)->
         $urlRouterProvider.otherwise("/")
-        $stateProvider.state 'movies', 
-            url: '/'
+        $stateProvider.state 'movies',
+            url: '/movies'
             abstract: true
-            template: '<div ui-view></div>' 
+            template: '<div ui-view></div>'
 
         $stateProvider.state 'movies.list',
             url:  '?keywords'
@@ -14,20 +14,17 @@ cinema.config([ '$stateProvider', '$urlRouterProvider'
             templateUrl: 'index.html'
 
         $stateProvider.state 'movies.new',
-            url: 'movies/new'
+            url: '/new'
             controller: 'MovieController'
             templateUrl: 'movies/form.html'
 
         $stateProvider.state 'movies.edit',
-            url: 'movies/:id/edit'
+            url: '/:id/edit'
             controller: 'MovieController'
-            templateUrl: 'movies/form.html'    
+            templateUrl: 'movies/form.html'
 
         $stateProvider.state 'movies.show',
-            url: 'movies/:id'
+            url: '/:id'
             controller: 'MovieController'
             templateUrl: 'movies/show.html'
-
-        
-
  ])

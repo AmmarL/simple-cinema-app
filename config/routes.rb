@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
+  get 'reservations/index'
+
+  get 'user_types/index'
+
+  get 'screenings/index'
+
   mount_devise_token_auth_for 'User', at: '/api/auth'
   get 'theaters/index'
 
   root 'home#index'
 
   resources :movies , only: [:index , :show , :create , :update , :destroy]
+  resources :screenings , only: [:index , :show , :create , :update , :destroy]
+  resources :reservations , only: [:index , :show , :create , :update , :destroy]
   resources :theaters , only: [:index , :show]
   resources :rooms , only: [:index]
   

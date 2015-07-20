@@ -1,8 +1,8 @@
 controllers = angular.module('controllers')
 
-controllers .controller('UserSessionController' , ['$scope', '$state', '$auth',     
-    ($scope, $state, $auth) ->
-     
+controllers .controller('UserSessionController' , ['$scope', '$state', '$auth', 'UserService',
+    ($scope, $state, $auth ,UserService) ->
+
         $scope.updateAccount = (user)->
             $auth.updateAccount(user);
 
@@ -18,12 +18,13 @@ controllers .controller('UserSessionController' , ['$scope', '$state', '$auth',
                 $scope.authErrors = []
                 $scope.authErrors.push("Email already taken")
                 $scope.errorsCount = $scope.authErrors.length
-            
+
         )
 
-        $scope.$on('auth:login-success', (ev, reason)->
-            $state.go('books.list')
-        )
+        $scope.$on 'auth:login-success', (ev, user)->
+            console.log user
+            $state.go('screenings.list')
+
 
         $scope.$on('auth:login-error', (ev, reason) ->
           $scope.authErrors = reason.errors

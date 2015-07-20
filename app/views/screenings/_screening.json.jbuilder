@@ -1,0 +1,1 @@
+json.(screening, :start_datetime, :duration, :movie, :room)

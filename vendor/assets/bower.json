@@ -9,6 +9,8 @@
     "angular-flash": "latest",
     "angular-ui-router": "latest",
     "ng-token-auth": "latest",
-    "angular-cookies": "latest"
+    "angular-cookie": "latest",
+    "angular-cookies": "latest",
+    "soundasleep-bootstrap-datetimepicker-sass": "latest"
   }
 }
