@@ -6,9 +6,43 @@
 <section class="col-md-6 col-md-offset-3">
   <article class="panel panel-info">
     <header class="panel-heading"><h1>{{screening.movie.name}}</h1></header>
-    <p class="panel-body">
-      {{screening.movie.description}}
-    </p>
+    <div class="panel-body">
+        <div class="form-group">
+        <label class="col-sm-2 control-label">Opis</label>
+        <div class="col-sm-10">
+          <p class="form-control-static">{{screening.movie.description}}</p>
+        </div>
+        </div>
+        <div class="form-group">
+        <label class="col-sm-2 control-label">Trajanje</label>
+        <div class="col-sm-10">
+          <p class="form-control-static">{{screening.movie.duration}}</p>
+        </div>
+        </div>
+        <div class="form-group">
+        <label class="col-sm-2 control-label">Pocetak</label>
+        <div class="col-sm-10">
+          <p class="form-control-static">{{screening.start_datetime}}</p>
+        </div>
+        </div>
+    </div>
+
+  </article>
+  <article class="panel panel-info">
+    <header class="panel-heading"><h3>Reserve Ticket</h3></header>
+    <div class="panel-body">
+        <div class="form-group">
+        <label class="col-sm-2 control-label">Broj karti:</label>
+        <div class="col-sm-10">
+          <select ng-model="selectedNumber"  ng-options="number for number in numbers"></select>
+        </div>
+        </div>
+
+        <div class="col-md-3 text-right">
+          <button ng-click="reserve(screening.id)" class="btn btn-info" ng-show="user.user_type_id == 1"> Reserve </button>
+        </div>
+    </div>
+
   </article>
 <section>
     <div class="col-md-3">
@@ -17,8 +51,8 @@
       </button>
     </div>
     <div class="col-md-9 text-right">
-      <button ng-click="edit()" class="btn btn-info"> Edit </button>
-      <button ng-click="delete()" class="btn btn-danger"> Delete </button>
+      <button ng-click="edit(screening.id)" class="btn btn-info" ng-show="user.user_type_id == 1"> Edit </button>
+      <button ng-click="delete()" class="btn btn-danger" ng-show="user.user_type_id == 1"> Delete </button>
     </div>
   </section>
 </section>

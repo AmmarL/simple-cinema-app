@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-    	def index
+    def index
 		@reservations = Reservation.all()
 	end
 
@@ -7,8 +7,8 @@ class ReservationsController < ApplicationController
 		@reservation = Reservation.find(param[:id])
 	end
 
-	def create    
-    @reservation = Reservation.new(params.require(:reservation).permit(:screening,:user))
+	def create
+    @reservation = Reservation.new(params.require(:reservation).permit(:screening_id,:user_id,:number_of_tickets))
     @reservation.save
     render 'show', status: 201
   end

@@ -1,1 +1,1 @@
-json.(reservation, :screening, :user)
+json.(reservation, :screening, :user , :number_of_tickets)

@@ -22,7 +22,7 @@ controllers .controller('UserSessionController' , ['$scope', '$state', '$auth', 
         )
 
         $scope.$on 'auth:login-success', (ev, user)->
-            console.log user
+            UserService.user = user;
             $state.go('screenings.list')
 
 
@@ -33,6 +33,6 @@ controllers .controller('UserSessionController' , ['$scope', '$state', '$auth', 
 
         $scope.$on('auth:logout-success', (ev) ->
           alert('goodbye')
-          $state.go('books.list')
+          $state.go('screenings.list')
         )
 ])

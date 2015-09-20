@@ -1,1 +1,1 @@
-json.partial! 'reservation' , theater: @reservation
+json.partial! 'reservation' , reservation: @reservation

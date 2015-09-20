@@ -32,7 +32,7 @@
  Movie
 </label>
 <div class="col-md-5">
-  <select class="form-control" ng-options="movie.name as movie in movies" ng-model="screening.movie">
+  <select class="form-control" ng-options="movie.id as movie.name for movie in movies track by movie.id" ng-model="screening.movie">
 
   </select>
 </div>
@@ -45,7 +45,7 @@
  Theater
 </label>
 <div class="col-md-5">
-  <select class="form-control" ng-options="theater.name for theater in theaters" ng-model="selectedTheater" ng-change="getRooms(selectedTheater)">
+  <select class="form-control" ng-options="theater.name for theater in theaters" ng-model="screening.room.theater" ng-change="getRooms(selectedTheater)">
 
   </select>
 </div>
@@ -58,7 +58,7 @@
  Theater Hall
 </label>
 <div class="col-md-4">
-  <select class="form-control" ng-options="room.name room in rooms" ng-model="screening.room">
+  <select class="form-control" ng-options="room.id as room.name for room in rooms track by room.id" ng-model="screening.room">
 
   </select>
 </div>

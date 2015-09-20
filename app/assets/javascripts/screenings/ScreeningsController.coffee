@@ -1,7 +1,10 @@
 controllers = angular.module('controllers')
 
-controllers.controller("ScreeningsController", [ '$scope','$state', '$location', '$resource' , 'ScreeningsService',
-  ($scope , $state, $location , $resource , ScreeningsService)->
+controllers.controller("ScreeningsController", [ '$scope','$state', '$location', '$resource' , 'ScreeningsService', '$rootScope' ,
+  ($scope , $state, $location , $resource , ScreeningsService , $rootScope )->
+
+    console.log  $rootScope.user
+
     $scope.search = (keywords)->
     	console.log keywords
     	$state.go 'screenings.list', keywords: keywords
@@ -9,6 +12,7 @@ controllers.controller("ScreeningsController", [ '$scope','$state', '$location',
 
     ScreeningsService.getScreenings().then (results)->
         $scope.screenings = results
+        console.log results
 
     $scope.view = (screeningId)-> $state.go 'screenings.show' , id: screeningId
 

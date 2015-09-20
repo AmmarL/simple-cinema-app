@@ -1,0 +1,11 @@
+digraph models_diagram {
+	graph[overlap=false, splines=true, bgcolor="none"]
+	"Movie" [shape=Mrecord, label="{Movie|id :integer\lname :string\ldescription :text\lduration :integer\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"Reservation" [shape=Mrecord, label="{Reservation|id :integer\luser_id :integer\lscreening_id :integer\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"Room" [shape=Mrecord, label="{Room|id :integer\lname :string\ldescription :text\lcapacity :integer\lrow :integer\ltheater_id :integer\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"Screening" [shape=Mrecord, label="{Screening|id :integer\lduration :integer\lmovie_id :integer\lroom_id :integer\lcreated_at :datetime\lupdated_at :datetime\lstart_datetime :datetime\l}"]
+	"Theater" [shape=Mrecord, label="{Theater|id :integer\lname :string\ldescription :text\laddress :text\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"User" [shape=Mrecord, label="{User|id :integer\lprovider :string\luid :string\lencrypted_password :string\lreset_password_token :string\lreset_password_sent_at :datetime\lremember_created_at :datetime\lsign_in_count :integer\lcurrent_sign_in_at :datetime\llast_sign_in_at :datetime\lcurrent_sign_in_ip :string\llast_sign_in_ip :string\lconfirmation_token :string\lconfirmed_at :datetime\lconfirmation_sent_at :datetime\lunconfirmed_email :string\lname :string\lnickname :string\limage :string\lemail :string\ltokens :text\lcreated_at :datetime\lupdated_at :datetime\luser_type_id :integer\l}"]
+	"UserType" [shape=Mrecord, label="{UserType|id :integer\lname :string\ldescription :text\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"Theater" -> "Room" [arrowtail=odot, arrowhead=crow, dir=both color="#4BF4C2"]
+}

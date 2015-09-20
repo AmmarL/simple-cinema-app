@@ -9,22 +9,28 @@ cinema.config([ '$stateProvider', '$urlRouterProvider'
             template: '<div ui-view></div>'
 
         $stateProvider.state 'screenings.list',
-            url:  ''
+            url:  '/'
             controller: 'ScreeningsController'
             templateUrl: 'screenings/list.html'
 
         $stateProvider.state 'screenings.new',
-            url: 'screenings/new'
+            url: '/screenings/new'
             controller: 'ScreeningController'
             templateUrl: 'screenings/form.html'
+            resolve:
+                auth: ($auth) ->
+                    return $auth.validateUser()
 
         $stateProvider.state 'screenings.edit',
-            url: 'screenings/:id/edit'
+            url: '/screenings/:id/edit'
             controller: 'ScreeningController'
             templateUrl: 'screenings/form.html'
+            resolve:
+                auth: ($auth) ->
+                    return $auth.validateUser()
 
         $stateProvider.state 'screenings.show',
-            url: 'screenings/:id'
+            url: '/screenings/:id'
             controller: 'ScreeningController'
             templateUrl: 'screenings/show.html'
 

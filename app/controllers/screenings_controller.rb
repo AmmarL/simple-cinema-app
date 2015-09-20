@@ -1,10 +1,10 @@
 class ScreeningsController < ApplicationController
   	def index
-		@screenings = Screening.all()
+		@screenings = Screening.all().order(start_datetime: :desc)
 	end
 
 	def show
-		@screening = Screening.find(param[:id])
+		@screening = Screening.find(params[:id])
 	end
 
 	def create
@@ -27,4 +27,3 @@ class ScreeningsController < ApplicationController
 
 
 end
-

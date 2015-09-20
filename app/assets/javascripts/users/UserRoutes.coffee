@@ -1,8 +1,8 @@
 cinema = angular.module('cinema');
 
-cinema.config(['$stateProvider' , '$urlRouterProvider' , 
+cinema.config(['$stateProvider' , '$urlRouterProvider' ,
     ($stateProvider , $urlRouterProvider)->
-        $stateProvider.state 'users', 
+        $stateProvider.state 'users',
             url: '/users'
             abstract: true
             template: '<div ui-view></div>'
@@ -13,20 +13,20 @@ cinema.config(['$stateProvider' , '$urlRouterProvider' ,
             controller: 'UserSessionController'
 
 
-        $stateProvider.state 'users.register', 
+        $stateProvider.state 'users.register',
             url: '/register',
             templateUrl: 'user_registration/new.html',
             controller: 'UserRegisterController',
-            
-              
-        $stateProvider.state 'users.edit', 
+
+
+        $stateProvider.state 'users.edit',
             url: '/edit',
             templateUrl: 'user_session/edit.html',
             controller: 'UserSessionController',
-            resolve: 
-                auth: ($auth) -> 
+            resolve:
+                auth: ($auth) ->
                     return $auth.validateUser()
-                userTypes: 
+                userTypes:
                     ['userTypesFactory', (userTypesFactory) -> return userTypesFactory.getUserTypes() ]
-    
+
   ])

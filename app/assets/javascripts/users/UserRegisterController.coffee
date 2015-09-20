@@ -5,11 +5,10 @@ controllers .controller('UserRegisterController' , ['$scope', '$state', '$auth',
 
 
         $scope.submitRegistration = (user) ->
-            $auth.submitRegistration(user)
+            $auth.submitRegistration(user).then ()-> $auth.submitLogin {email : user.email , password: user.password}
 
 
         $scope.$on 'auth:registration-email-success' , (ev, message)->
-            alert("A registration email was sent to " + message.email)
             $state.go 'screenings.list'
 
 

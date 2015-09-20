@@ -12,13 +12,13 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
 
-      <a class="navbar-brand" ui-sref='movies.list'>Home</a>
+      <a class="navbar-brand" ui-sref='screenings.list'>Home</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a ui-sref='theaters.list'>Theaters </a></li>
+        <li class="active" ng-show="user.user_type_id == 1" ><a ui-sref='movies.list'>Movies </a></li>
         <li class="active"><a ui-sref='screenings.list'>Screenings </a></li>
       </ul>
 

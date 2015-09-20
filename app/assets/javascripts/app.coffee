@@ -31,17 +31,16 @@ movies = [
     name: 'Star Wars'
   },
 ]
-angular.module('cinema').config(['flashProvider' ,
-  (flashProvider)->
+angular.module('cinema').config(['flashProvider' ,  (flashProvider )->
     flashProvider.errorClassnames.push("alert-danger")
     flashProvider.warnClassnames.push("alert-warning")
     flashProvider.infoClassnames.push("alert-info")
     flashProvider.successClassnames.push("alert-success")
 
-    $scope.$on 'auth:session-expired', (ev) ->
-        alert('Session has expired')
-
   ])
+
+
+
 
 controllers = angular.module('controllers',[])
 services = angular.module('services' , [])

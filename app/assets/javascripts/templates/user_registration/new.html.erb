@@ -1,4 +1,4 @@
-<div class="clear-form">
+<div class="clear-form  col-md-offset-4 col-md-4">
   <form ng-submit="submitRegistration(registrationForm)" role="form" ng-init="registrationForm = {}">
     <div class="form-heading gray">
         <h3 class="header center">Create an account</h3>
@@ -13,11 +13,6 @@
         <label for="password_confirmation" class="sr-only">Password Confirmation</label>
         <input type="password" name="password_confirmation" id="password_confirmation" ng-model="registrationForm.password_confirmation" required="required" class="form-control" placeholder="Password confirmation">
 
-        <!--<div class="form-group">
-            <label for="name">I am a:</label>
-            <select class="form-control" ng-options="type.id as type.type for type in userTypes" ng-model="user_type" required>
-            </select>
-        </div>-->
       </div>
     </div>
 
