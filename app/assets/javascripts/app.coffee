@@ -13,24 +13,7 @@ angular.module('cinema',[
 ])
 
 
-movies = [
-  {
-    id: 1,
-    name: 'The Shinning'
-  },
-  {
-    id: 2,
-    name: 'The Good Fellas'
-  },
-  {
-    id: 3,
-    name: 'Django Unchained'
-  },
-  {
-    id: 4,
-    name: 'Star Wars'
-  },
-]
+
 angular.module('cinema').config(['flashProvider' ,  (flashProvider )->
     flashProvider.errorClassnames.push("alert-danger")
     flashProvider.warnClassnames.push("alert-warning")

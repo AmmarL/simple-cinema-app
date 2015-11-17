@@ -21,6 +21,6 @@ controllers.controller("ScreeningsController", [ '$scope','$state', '$location',
     $scope.edit = (screeningId)-> $state.go 'screenings.edit' , id: screeningId
 
     $scope.delete = (screening)->
-            screeningsService.deletescreening(screening).then( ()-> $scope.back() )
+            ScreeningsService.deleteScreening(screening).then( ()-> $scope.back() )
 
 ])

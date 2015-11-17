@@ -1,7 +1,7 @@
 controllers = angular.module('controllers')
 
-controllers .controller('UserSessionController' , ['$scope', '$state', '$auth', 'UserService',
-    ($scope, $state, $auth ,UserService) ->
+controllers .controller('UserSessionController' , ['$scope', '$state', '$auth', 'UserService', '$rootScope',
+    ($scope, $state, $auth ,UserService , $rootScope) ->
 
         $scope.updateAccount = (user)->
             $auth.updateAccount(user);
@@ -23,6 +23,7 @@ controllers .controller('UserSessionController' , ['$scope', '$state', '$auth', 
 
         $scope.$on 'auth:login-success', (ev, user)->
             UserService.user = user;
+            $rootScope.loggedIn = true;
             $state.go('screenings.list')
 
 

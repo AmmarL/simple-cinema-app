@@ -18,6 +18,10 @@ cinema.config(['$stateProvider' , '$urlRouterProvider' ,
             templateUrl: 'user_registration/new.html',
             controller: 'UserRegisterController',
 
+        $stateProvider.state 'users.logout',
+            url: '/logout',
+            templateUrl: 'user_session/logout.html',
+            controller: 'UserLogoutController'
 
         $stateProvider.state 'users.edit',
             url: '/edit',
